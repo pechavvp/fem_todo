@@ -1,64 +1,69 @@
-const list = {
-    "create a task": "In Progress",
-    "make a bed": "Done",
-    "write a post": "To Do",
+const list = [
+    {
+        id: 1,
+        name: "create a post",
+        status: "TODO",
+        priority: "low",
+    },
+    {
+        id: 2,
+        name: "test",
+        status: "Done",
+        priority: "high",
+    }
+]
+
+function changeStatus(taskName, status) {
+    let task = list.find(item => item.name === taskName);
+    task.status = status;
 }
 
-function changeStatus(task, status) {
-    list[task] = status;
+function addTask(newTaskName, priority) {
+    const newTask = {
+        id: list.length + 1,
+        name: newTaskName,
+        status: "TODO",
+        priority: priority,
+    }
+    list.push(newTask);
 }
 
-function addTask(task) {
-    list[task] = "To Do";
-}
-
-function deleteTask(task) {
-    delete list[task];
+function deleteTask(deleteTaskName) {
+    let indexToDelete = list.findIndex(item => item.name === deleteTaskName);
+    list.splice(indexToDelete, 1);
 }
 
 function showList() {
-    console.log("ToDo:");
-
-    let toDoContain;
-
-    for (let key in list) {
-        if (list[key] === "To Do") {
-            toDoContain = key;
-            console.log(key);
-        }
+    let toDoItems = list.filter(item => item.status === "TODO");
+    let showToDo = "To Do:\n";
+    if (toDoItems.length === 0) {
+        console.log(showToDo + "-");
+    } else {
+        toDoItems.forEach(function(item) {
+            showToDo += item.name + "\n";
+        });
+        console.log(showToDo);
     }
 
-    if (!toDoContain) {
-        console.log("---");
+    let inProgressItems = list.filter(item => item.status === "In progress");
+    let showInProgress = "In progress:\n";
+    if (inProgressItems.length === 0) {
+        console.log(showInProgress + "-");
+    } else {
+        inProgressItems.forEach(function(item) {
+            showInProgress += item.name + "\n";
+        });
+        console.log(showInProgress);
     }
 
-    console.log("In Progress:");
-
-    let inProgressContain;
-
-    for (let key in list) {
-        if (list[key] === "In Progress") {
-            inProgressContain = key;
-            console.log(key);
-        }
-    }
-
-    if (!inProgressContain) {
-        console.log("---");
-    }
-
-    console.log("Done:");
-
-    let doneContain;
-
-    for (let key in list) {
-        if (list[key] === "Done") {
-            doneContain = key;
-            console.log(key);
-        }
-    }
-
-    if (!doneContain) {
-        console.log("---");
+    let doneItems = list.filter(item => item.status === "Done");
+    let showDone = "Done:\n";
+    if (doneItems.length === 0) {
+        console.log(showDone + "-");
+    } else {
+        doneItems.forEach(function(item) {
+            showDone += item.name + "\n";
+        });
+        console.log(showDone);
     }
 }
