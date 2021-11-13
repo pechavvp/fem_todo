@@ -33,7 +33,9 @@ function deleteTask(deleteTaskName) {
     list.splice(indexToDelete, 1);
 }
 
-function showList() {
+function showBy(key) {
+    if (key === "status") {
+
     let toDoItems = list.filter(item => item.status === "TODO");
     let showToDo = "To Do:\n";
     if (toDoItems.length === 0) {
@@ -65,5 +67,31 @@ function showList() {
             showDone += item.name + "\n";
         });
         console.log(showDone);
+    }
+    }
+
+    if (key === "priority") {
+        
+    let highPriorityItems = list.filter(item => item.priority === "high");
+    let showHighPriority = "High:\n";
+    if (highPriorityItems.length === 0) {
+        console.log(showHighPriority + "-");
+    } else {
+        highPriorityItems.forEach(function(item) {
+            showHighPriority += item.name + "\n";
+        });
+        console.log(showHighPriority);
+    }
+
+    let lowPriorityItems = list.filter(item => item.priority === "low");
+    let showLowPriority = "Low:\n";
+    if (lowPriorityItems.length === 0) {
+        console.log(showLowPriority + "-");
+    } else {
+        lowPriorityItems.forEach(function(item) {
+            showLowPriority += item.name + "\n";
+        });
+        console.log(showLowPriority);
+    }
     }
 }
