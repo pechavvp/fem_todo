@@ -13,14 +13,18 @@ const list = [
     }
 ]
 
+let idCounter = 2;
+
 function changeStatus(taskName, status) {
     let task = list.find(item => item.name === taskName);
     task.status = status;
 }
 
 function addTask(newTaskName, priority) {
+    idCounter += 1;
+    
     const newTask = {
-        id: list.length + 1,
+        id: idCounter,
         name: newTaskName,
         status: "TODO",
         priority: priority,
