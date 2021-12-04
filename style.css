@@ -21,11 +21,11 @@ body {
     font-size: 18px;
     text-align: center;
     margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .block-input {
     width: 460px;
-    height: 45px;
     border: 1px solid #989898;
     border-radius: 6px;
     margin: 0 auto;
@@ -45,6 +45,7 @@ input:focus {
     padding: 12px;
     outline: none;
     color: #202020;
+    white-space: normal;
 }
 
 input::-webkit-input-placeholder {color:#bbb;}
@@ -57,4 +58,54 @@ input:-ms-input-placeholder      {color:#bbb;}
     width: 18px;
     height: 18px;
     border: none;
+}
+
+.block-item {
+    display: block;
+    position: relative;
+    width: 460px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    margin: 8px auto;
+}
+
+.block-item-done {
+    background-color: #f4f4f4;
+}
+
+.block-item-text {
+    font-size: 18px;
+    padding: 12px 45px;
+    border-radius: 6px;
+    color: #202020;
+    margin: 0;
+}
+
+.checkbox-button {
+    display: block;
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border: none;
+    top: 12px;
+    left: 12px;
+}
+
+.checkbox-button-off {
+    background: transparent url(img/checkbox.png) no-repeat;
+}
+
+.checkbox-button-on {
+    background: transparent url(img/checkbox-on.png) no-repeat;
+}
+
+.delete-button {
+    display: block;
+    position: absolute;
+    background: transparent url(img/delete-icon.png) no-repeat;
+    width: 17px;
+    height: 17px;
+    border: none;
+    top: 12px;
+    right: 12px;
 }
