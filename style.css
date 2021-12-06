@@ -58,6 +58,7 @@ input:-ms-input-placeholder      {color:#bbb;}
     width: 18px;
     height: 18px;
     border: none;
+    cursor: pointer;
 }
 
 .block-item {
@@ -79,6 +80,7 @@ input:-ms-input-placeholder      {color:#bbb;}
     border-radius: 6px;
     color: #202020;
     margin: 0;
+    word-wrap: break-word;
 }
 
 .checkbox-button {
@@ -89,6 +91,7 @@ input:-ms-input-placeholder      {color:#bbb;}
     border: none;
     top: 12px;
     left: 12px;
+    cursor: pointer;
 }
 
 .checkbox-button-off {
@@ -108,4 +111,5 @@ input:-ms-input-placeholder      {color:#bbb;}
     border: none;
     top: 12px;
     right: 12px;
+    cursor: pointer;
 }
