@@ -38,6 +38,7 @@ body {
     border: none;
     border-radius: 6px;
     color: #202020;
+    width: 400px;
 }
 
 input:focus {
